@@ -7,7 +7,6 @@
     "build": "tsc",
     "prestart": "npm run build",
     "test": "jest",
-    "debug-test": "jest --watch",
     "start": "node ."
   },
   "dependencies": {

@@ -41,7 +41,8 @@ export function canDecoder(frame: string): CANMessage {
 
 export function canEncoder(canMessage: CANMessage) {
     if(canMessage.dlc !== canMessage.dataField.length) throw new Log(Events.messageIsInvalid);
-    if(toBase(canMessage.identifier, 16, 2).length > 11) throw new Log(Events.messageIsInvalid);
+    console.log(toBase(canMessage.identifier, 16, 2));
+    if(toBase(canMessage.identifier, 16, 2).length <= 11) throw new Log(Events.messageIsInvalid);
 
     let frame = '';
     frame += toBase(canMessage.sof, 16, 2);

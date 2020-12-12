@@ -14,9 +14,9 @@ export default class CANBus {
     public detector: CANBusDetector,
     public reporter: CANBusReporter,
     public logger: Logger,
-    public emitter: any
+    public canBusEmitter: any
   ) {
-    logger.setSocket(emitter);
+    logger.setSocket(canBusEmitter);
   }
 
   private onFrameGenerated = (frame: string): void => {
@@ -25,7 +25,7 @@ export default class CANBus {
       const [detectionResult, historyCanMessage]: [DetectionResult, HistoryCANMessage] =
         this.detector.detect(canMessage);
 
-      this.reporter.addData(historyCanMessage, detectionResult, this.emitter);
+      this.reporter.addData(historyCanMessage, detectionResult, this.canBusEmitter);
     } catch (e) {
       const log: Log = new Log(Events.failedToDetectFrame, e);
       this.logger.add(log);

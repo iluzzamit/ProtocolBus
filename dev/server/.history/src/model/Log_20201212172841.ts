@@ -8,9 +8,7 @@ export enum Events {
   failedToGetLogs = 'failed-to-get-logs',
   failedToToggleGeneratorAPI = 'failed-to-toggle-generator',
   failedToDetectFrame = 'failed-to-detect-frame',
-  userConnected = 'user-connected',
-  frameIsInvalid = 'frame-invalid',
-  messageIsInvalid = 'message-invalid'
+  userConnected = 'user-connected'
 }
 
 export class Log {

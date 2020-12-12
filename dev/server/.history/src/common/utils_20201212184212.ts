@@ -13,11 +13,11 @@ function dataDecoder(frame: string, length: number): any[] {
 }
 
 export function canDecoder(frame: string): CANMessage {
-    if (frame.length < 19) throw new Log(Events.frameIsInvalid, frame);
+    if (frame.length < 19) throw new Log(Events.frameIsNotValid, frame);
     const dataLength = parseInt(toBase(frame.slice(15, 19), 2, 10));
     const dataPointer = dataLength * 8;
 
-    if (frame.length !== 44 + dataPointer) throw new Log(Events.frameIsInvalid, frame);
+    if (frame.length !== 44 + dataPointer) throw new Log(Events.frameIsNotValid, frame);
 
     const canMessage: CANMessage = {
         sof: frame.slice(0, 1),
@@ -40,9 +40,6 @@ export function canDecoder(frame: string): CANMessage {
 }
 
 export function canEncoder(canMessage: CANMessage) {
-    if(canMessage.dlc !== canMessage.dataField.length) throw new Log(Events.messageIsInvalid);
-    if(toBase(canMessage.identifier, 16, 2).length > 11) throw new Log(Events.messageIsInvalid);
-
     let frame = '';
     frame += toBase(canMessage.sof, 16, 2);
     frame += paddingZeros(toBase(canMessage.identifier, 16, 2), 11);

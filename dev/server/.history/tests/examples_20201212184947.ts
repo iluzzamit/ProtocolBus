@@ -32,7 +32,7 @@ export const messageWithInvalidDataFieldSize: CANMessage = {
 
 export const messageWithInvalidID: CANMessage = {
     sof: '1',
-    identifier: '0x4000',
+    identifier: '0x400',
     rtr: '1',
     ide: '1',
     r: '1',
