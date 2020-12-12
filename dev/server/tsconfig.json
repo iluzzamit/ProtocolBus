@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "experimentalDecorators": true,
+        "allowJs": false,
+        "module": "commonjs",
+        "sourceMap": true,
+        "inlineSources": true,
+        "removeComments": true,
+        "target": "es2017",
+        "resolveJsonModule": true
+    },
+    "include":[
+        "./src/**/*", "tests/testConsts.js"
+    ]
+}

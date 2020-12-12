@@ -1,0 +1,30 @@
+{
+  "name": "protocols-parser",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node ."
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.9",
+    "@types/shortid": "0.0.29",
+    "@types/socket.io": "^2.1.12",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "set-random-interval": "^1.1.0",
+    "shortid": "^2.2.16",
+    "socket.io": "^3.0.4",
+    "typescript": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.9",
+    "@types/node": "^14.14.12",
+    "@types/uuid": "^8.3.0",
+    "nodemon": "^2.0.6",
+    "ts-node": "^9.1.1",
+    "tslint": "^6.1.3"
+  }
+}

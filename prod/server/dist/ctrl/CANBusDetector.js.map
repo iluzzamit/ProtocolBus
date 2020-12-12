@@ -1,0 +1,1 @@
+{"version":3,"file":"CANBusDetector.js","sourceRoot":"","sources":["../../src/ctrl/CANBusDetector.ts"],"names":[],"mappings":";;AAAA,MAAqB,cAAc;IAC/B,MAAM,CAAC,OAAO;QACV,OAAO,IAAI,CAAC,MAAM,EAAE,GAAG,GAAG,CAAC;IAC/B,CAAC;CACJ;AAJD,iCAIC","sourcesContent":["export default class CANBusDetector {\r\n    detect(message) {\r\n        return Math.random() < 0.5;\r\n    }\r\n}"]}
